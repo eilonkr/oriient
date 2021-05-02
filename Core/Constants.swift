@@ -13,5 +13,10 @@ struct Constants {
         static let googleMapsAPIKey = "AIzaSyB75rH_l0pLrgL89iEPhMkddJJVAQNLjKo"
     }
     
+    struct Map {
+        static let cameraHeightInMeters: Double = 1500
+        static let maximumNearbyPlacesToShow = 5
+    }
+    
 }
 

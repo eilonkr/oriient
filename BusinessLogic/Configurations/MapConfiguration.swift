@@ -14,7 +14,12 @@ struct MapConfiguration: Equatable {
     let noLocationCameraLocation: CLLocation
         
     static var `default`: MapConfiguration {
-        MapConfiguration(showsCurrentLocation: true, showsCurrentLocationButton: false, cameraZoom: 10.0, noLocationCameraLocation: .init(latitude: 49.26, longitude: -123.11))
+        MapConfiguration(
+            showsCurrentLocation: true,
+            showsCurrentLocationButton: false,
+            cameraZoom: 12,
+            noLocationCameraLocation: .init(latitude: 49.26, longitude: -123.11) // Vancouver I think?
+        )
     }
 }
 

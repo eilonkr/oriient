@@ -12,6 +12,8 @@
 		95029E6A263DB037005EE886 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95029E69263DB037005EE886 /* SceneDelegate.swift */; };
 		95029E71263DB03A005EE886 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95029E70263DB03A005EE886 /* Assets.xcassets */; };
 		95029E74263DB03A005EE886 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95029E72263DB03A005EE886 /* LaunchScreen.storyboard */; };
+		95497027263F1FEE00242ABC /* PlaceEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95497026263F1FEE00242ABC /* PlaceEndpoint.swift */; };
+		95497029263F1FF600242ABC /* PlacesRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95497028263F1FF600242ABC /* PlacesRequests.swift */; };
 		95B17DAC263DC4EF00101721 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B17DAB263DC4EF00101721 /* Constants.swift */; };
 		95B17DAE263DC58400101721 /* AppConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B17DAD263DC58400101721 /* AppConfigurator.swift */; };
 		95B17DB1263DC67300101721 /* EKSwiftSuite in Frameworks */ = {isa = PBXBuildFile; productRef = 95B17DB0263DC67300101721 /* EKSwiftSuite */; };
@@ -25,7 +27,6 @@
 		95C97416263DE269009B014C /* MapConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C97415263DE269009B014C /* MapConfiguration.swift */; };
 		95C9741A263DEEF9009B014C /* LocationManager+Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C97419263DEEF9009B014C /* LocationManager+Configuration.swift */; };
 		95CB2D3F263E907E00B77A9A /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CB2D3E263E907E00B77A9A /* HTTPRequest.swift */; };
-		95CB2D41263E90C200B77A9A /* PlacesClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CB2D40263E90C200B77A9A /* PlacesClient.swift */; };
 		95CB2D44263E9C4400B77A9A /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CB2D43263E9C4400B77A9A /* Place.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,8 @@
 		95029E70263DB03A005EE886 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95029E73263DB03A005EE886 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		95029E75263DB03A005EE886 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95497026263F1FEE00242ABC /* PlaceEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceEndpoint.swift; sourceTree = "<group>"; };
+		95497028263F1FF600242ABC /* PlacesRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesRequests.swift; sourceTree = "<group>"; };
 		95B17DAB263DC4EF00101721 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		95B17DAD263DC58400101721 /* AppConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigurator.swift; sourceTree = "<group>"; };
 		95B17DB3263DC69F00101721 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -50,7 +53,6 @@
 		95C97415263DE269009B014C /* MapConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapConfiguration.swift; sourceTree = "<group>"; };
 		95C97419263DEEF9009B014C /* LocationManager+Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "LocationManager+Configuration.swift"; path = "../../../../../../Applications/LocationManager+Configuration.swift"; sourceTree = "<group>"; };
 		95CB2D3E263E907E00B77A9A /* HTTPRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
-		95CB2D40263E90C200B77A9A /* PlacesClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesClient.swift; sourceTree = "<group>"; };
 		95CB2D43263E9C4400B77A9A /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		CD797F6EAA8E9CC31C034929 /* Pods-Oriient√.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Oriient√.debug.xcconfig"; path = "Target Support Files/Pods-Oriient√/Pods-Oriient√.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -99,6 +101,23 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		95497024263F1FBA00242ABC /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				95497025263F1FE100242ABC /* Places */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		95497025263F1FE100242ABC /* Places */ = {
+			isa = PBXGroup;
+			children = (
+				95497026263F1FEE00242ABC /* PlaceEndpoint.swift */,
+				95497028263F1FF600242ABC /* PlacesRequests.swift */,
+			);
+			path = Places;
+			sourceTree = "<group>";
+		};
 		95B17DA6263DC45800101721 /* LifeCycle */ = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +142,7 @@
 			children = (
 				95CB2D42263E9BC100B77A9A /* Models */,
 				95B17DC1263DCD2B00101721 /* Services */,
+				95497024263F1FBA00242ABC /* Networking */,
 				95C97414263DE25C009B014C /* Configurations */,
 			);
 			path = BusinessLogic;
@@ -180,7 +200,6 @@
 			children = (
 				95B17DC2263DCD4300101721 /* LocationManager.swift */,
 				95C97419263DEEF9009B014C /* LocationManager+Configuration.swift */,
-				95CB2D40263E90C200B77A9A /* PlacesClient.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -331,10 +350,11 @@
 				95B17DBB263DC7A700101721 /* MapState.swift in Sources */,
 				95C9741A263DEEF9009B014C /* LocationManager+Configuration.swift in Sources */,
 				95B17DC0263DC7C000101721 /* MapViewModel.swift in Sources */,
+				95497027263F1FEE00242ABC /* PlaceEndpoint.swift in Sources */,
 				95B17DB7263DC79200101721 /* MapModule.swift in Sources */,
 				95C97416263DE269009B014C /* MapConfiguration.swift in Sources */,
 				95B17DC3263DCD4300101721 /* LocationManager.swift in Sources */,
-				95CB2D41263E90C200B77A9A /* PlacesClient.swift in Sources */,
+				95497029263F1FF600242ABC /* PlacesRequests.swift in Sources */,
 				95B17DB9263DC7A100101721 /* MapPresenter.swift in Sources */,
 				95B17DAE263DC58400101721 /* AppConfigurator.swift in Sources */,
 				95B17DBE263DC7B500101721 /* MapViewController.swift in Sources */,

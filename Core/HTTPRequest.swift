@@ -105,9 +105,10 @@ fileprivate extension URL {
     func applyingQueryParameters(_ params: [String: String]) -> URL {
         var newStr = absoluteString
         newStr.append("?")
-        for (k, v) in params {
-            newStr.append("\(k)=\(v)")
+        params.forEach { k, v in
+            newStr.append("\(k)=\(v)&")
         }
+        newStr.removeLast()
         
         guard let url = URL(string: newStr) else { fatalError() }
         return url
