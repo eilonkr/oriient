@@ -53,6 +53,7 @@ final class MapViewController: UIViewController {
     private func add(place: Place) {
         let marker = GMSMarker(position: place.geometry.location.coordinate2d)
         marker.title = place.name
+        marker.snippet = place.name
         marker.map = mapView
     }
 }
