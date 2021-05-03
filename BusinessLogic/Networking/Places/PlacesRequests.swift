@@ -6,6 +6,7 @@
 //
 
 import CoreLocation
+import EKSwiftSuite
 
 struct FindPlaceRequest {
     let coordinate: CLLocationCoordinate2D

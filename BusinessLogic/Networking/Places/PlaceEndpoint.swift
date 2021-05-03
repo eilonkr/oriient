@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import EKSwiftSuite
 
 enum PlaceEndpoint: Endpoint {
     static var baseURLPath: String { "https://maps.googleapis.com/maps/api/place/" }

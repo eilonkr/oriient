@@ -26,7 +26,6 @@
 		95B17DC0263DC7C000101721 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B17DBF263DC7C000101721 /* MapViewModel.swift */; };
 		95B17DC3263DCD4300101721 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B17DC2263DCD4300101721 /* LocationManager.swift */; };
 		95C97416263DE269009B014C /* MapConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C97415263DE269009B014C /* MapConfiguration.swift */; };
-		95CB2D3F263E907E00B77A9A /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CB2D3E263E907E00B77A9A /* HTTPRequest.swift */; };
 		95CB2D44263E9C4400B77A9A /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CB2D43263E9C4400B77A9A /* Place.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,7 +51,6 @@
 		95B17DBF263DC7C000101721 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		95B17DC2263DCD4300101721 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		95C97415263DE269009B014C /* MapConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapConfiguration.swift; sourceTree = "<group>"; };
-		95CB2D3E263E907E00B77A9A /* HTTPRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
 		95CB2D43263E9C4400B77A9A /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		CD797F6EAA8E9CC31C034929 /* Pods-Oriient√.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Oriient√.debug.xcconfig"; path = "Target Support Files/Pods-Oriient√/Pods-Oriient√.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,7 +130,6 @@
 			children = (
 				95B17DAD263DC58400101721 /* AppConfigurator.swift */,
 				95B17DAB263DC4EF00101721 /* Constants.swift */,
-				95CB2D3E263E907E00B77A9A /* HTTPRequest.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -361,7 +358,6 @@
 				95CB2D44263E9C4400B77A9A /* Place.swift in Sources */,
 				955DB979263FD71200737F1D /* LocationManager+Configuration.swift in Sources */,
 				95B17DB4263DC69F00101721 /* AppCoordinator.swift in Sources */,
-				95CB2D3F263E907E00B77A9A /* HTTPRequest.swift in Sources */,
 				95B17DAC263DC4EF00101721 /* Constants.swift in Sources */,
 				95029E6A263DB037005EE886 /* SceneDelegate.swift in Sources */,
 			);
