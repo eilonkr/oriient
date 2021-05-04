@@ -24,6 +24,8 @@ final class MapViewController: UIViewController {
     var output: MapViewOutput
     private var viewModel: MapViewModel
     
+    private var markers: [GMSMarker] = []
+    
     init(viewModel: MapViewModel, output: MapViewOutput) {
         self.output = output
         self.viewModel = viewModel
@@ -55,6 +57,17 @@ final class MapViewController: UIViewController {
         marker.title = place.name
         marker.snippet = place.name
         marker.map = mapView
+        markers.append(marker)
+    }
+    
+    private func remove(place: Place) {
+        guard let markerIndex = markers.firstIndex(where: {
+            $0.position.latitude == place.geometry.location.lat && $0.position.longitude == place.geometry.location.lng
+        }) else {
+            return
+        }
+        markers[markerIndex].map = nil
+        markers.remove(at: markerIndex)
     }
 }
 
@@ -69,13 +82,16 @@ extension MapViewController: MapViewInput, ForceViewUpdate {
         
         /// Playing with bearing / heading right here.
         /// Uncomment to animate continuosly based on user heading.
-        // update(new: viewModel, old: self.viewModel, keyPath: \.bearing, force: force) { bearing in
-        //     guard let bearing = bearing else { return }
-        //     mapView.animate(toBearing: bearing)
-        // }
+        //  update(new: viewModel, old: self.viewModel, keyPath: \.bearing, force: force) { bearing in
+        //      guard let bearing = bearing else { return }
+        //      mapView.animate(toBearing: bearing)
+        //  }
         
         update(new: viewModel, old: self.viewModel, keyPath: \.places, force: force) { places in
-            // Add new places only.
+            // Clean all previous markers - optional
+            mapView.clear()
+            markers.removeAll()
+            
             for place in places where !self.viewModel.places.contains(place) {
                 add(place: place)
             }

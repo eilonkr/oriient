@@ -34,6 +34,7 @@ final class LocationManager: NSObject {
         super.init()
         manager.delegate = self
         manager.desiredAccuracy = configuration.locationAccuracy
+        manager.distanceFilter = configuration.distanceFilter
         manager.pausesLocationUpdatesAutomatically = configuration.pausesAutomatically
     }
     
@@ -72,9 +73,7 @@ final class LocationManager: NSObject {
 extension LocationManager: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if !configuration.monitorsLocationIndefinitely {
-            manager.stopUpdatingLocation()
-            manager.stopMonitoringSignificantLocationChanges()
-            manager.stopUpdatingHeading()
+            self.stopMonitoringLocation()
         }
         
         let location = locations.last

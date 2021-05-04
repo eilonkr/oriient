@@ -32,17 +32,19 @@ final class MapPresenter {
         if locationManager.isAuthorized {
             getLocation()
         } else {
+            #if DEBUG
             print("Location unauthorized")
+            #endif
         }
     }
     
     private func getLocation() {
         locationManager.startMonitoringLocation { [weak self] location in
             guard let self = self else { return }
-            // For this project, we will fetch places only once after the initial location is received.
-            if let location = location, self.state.location == nil {
+            if let location = location {
                 self.getPlaces(with: location.coordinate)
             }
+            
             self.state.location = location
             self.update()
         } headingCallback: { [weak self] direction in
@@ -52,7 +54,7 @@ final class MapPresenter {
     }
     
     private func getPlaces(with locationCoordinate: CLLocationCoordinate2D) {
-        view?.startLoadingInterface()
+        view?.startLoadingInterface(infoText: "Getting nearby places...")
         
         let placesRequest = FindPlaceRequest(coordinate: locationCoordinate, radius: Constants.Map.cameraHeightInMeters)
         placesRequest.make(expect: PlacesContainer.self) { [weak self] result in
