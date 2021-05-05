@@ -29,7 +29,7 @@ extension LocationManager {
         }
         
         static var `default`: Configuration {
-            return Configuration(locationAccuracy: kCLLocationAccuracyNearestTenMeters, distanceFilter: 10.0)
+            return Configuration(locationAccuracy: kCLLocationAccuracyNearestTenMeters, distanceFilter: 5.0)
         }
     }
 }

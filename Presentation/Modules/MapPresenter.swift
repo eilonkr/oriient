@@ -58,12 +58,16 @@ final class MapPresenter {
         
         let placesRequest = FindPlaceRequest(coordinate: locationCoordinate, radius: Constants.Map.cameraHeightInMeters)
         placesRequest.make(expect: PlacesContainer.self) { [weak self] result in
-            self?.view?.stopLoadingInterface()
+            guard let self = self else { return }
+            self.view?.stopLoadingInterface()
             
             switch result {
                 case .success(let placesContainer):
                     let places = Array(placesContainer.results.prefix(upTo: Constants.Map.maximumNearbyPlacesToShow))
-                    self?.state.places = places
+                    self.state.places = places
+                    // Optional – append places instead of replacing.
+                    // self.state.places += places.filter { !self.state.places.contains($0) }
+                    self.update()
                 case .failure(let error):
                     print(error)
             }

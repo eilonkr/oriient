@@ -74,10 +74,22 @@ final class MapViewController: UIViewController {
 extension MapViewController: MapViewInput, ForceViewUpdate {
     func update(with viewModel: MapViewModel, force: Bool, animated: Bool) {
         update(new: viewModel, old: self.viewModel, keyPath: \.location, force: force) { location in
-            // Animate to current location only once.
+            // Animate to current location only once for convenience.
+            // Comment / remove the following line to animate to current location as updates come in.
             guard self.viewModel.location == nil else { return }
+            
             let cameraCoordinate = viewModel.location?.coordinate ?? viewModel.mapConfiguration.noLocationCameraLocation.coordinate
             mapView.animate(toLocation: cameraCoordinate)
+        }
+        
+        update(new: viewModel, old: self.viewModel, keyPath: \.places, force: force) { places in
+            for place in places where !self.viewModel.places.contains(place) {
+                add(place: place)
+            }
+            
+            for place in self.viewModel.places where !places.contains(place) {
+                remove(place: place)
+            }
         }
         
         /// Playing with bearing / heading right here.
@@ -86,16 +98,6 @@ extension MapViewController: MapViewInput, ForceViewUpdate {
         //      guard let bearing = bearing else { return }
         //      mapView.animate(toBearing: bearing)
         //  }
-        
-        update(new: viewModel, old: self.viewModel, keyPath: \.places, force: force) { places in
-            // Clean all previous markers - optional
-            mapView.clear()
-            markers.removeAll()
-            
-            for place in places where !self.viewModel.places.contains(place) {
-                add(place: place)
-            }
-        }
      
         self.viewModel = viewModel
     }
